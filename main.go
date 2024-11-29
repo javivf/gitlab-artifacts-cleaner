@@ -28,7 +28,7 @@ func worker(server string, project_id int, token string, jobs <-chan Job, result
 			return
 		}
 		defer resp.Body.Close()
-		fmt.Println("job artifacts deleted:", job.ID, resp.StatusCode)
+		fmt.Println("job artifacts deleted:", job.ID)
 
 		results <- resp
 		wg.Done()
